@@ -1,18 +1,18 @@
-package main
+package set1
 
 import (
 	"encoding/hex"
 	"fmt"
+	"go-learn/cryptopals/utils"
 )
 
-func main() {
+func C3() {
 	const ciphertext = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
 	const keys = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	hex1, err1 := hex.DecodeString(ciphertext)
+	hex1, err := hex.DecodeString(ciphertext)
+	fmt.Printf("\nEncoded string: %s", ciphertext)
 
-	if err1 != nil {
-		panic(err1)
-	}
+	utils.HandleErrorAgressively(err)
 
 	n := len(hex1)
 
